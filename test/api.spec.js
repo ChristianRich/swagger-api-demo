@@ -4,8 +4,9 @@ import app from '../api';
 import * as is from 'is_js';
 import { default as swagger } from '../api/swagger/util';
 import * as _ from 'lodash';
-const HOST = 'http://localhost:';
-const PORT = 3000;
+
+const HOST = 'http://localhost:' || process.env.HOST;
+const PORT = 3000 || process.env.PORT;
 
 test.before(async() => {
     await swagger.init(app);
