@@ -8,8 +8,8 @@ import SwaggerExpress from 'swagger-express-mw';
 import SwaggerUi from 'swagger-tools/middleware/swagger-ui';
 import promisify from 'es6-promisify';
 
-const src = path.resolve(process.cwd() + '/api/swagger/src.yaml');
-const dest = path.resolve(process.cwd() + '/api/swagger/swagger.yaml');
+const SRC = path.resolve(process.cwd() + '/api/swagger/src.yaml');
+const DEST = path.resolve(process.cwd() + '/api/swagger/swagger.yaml');
 
 /**
  * Various methods to build and register your Swagger API
@@ -52,7 +52,7 @@ export default {
 
         try{
             swaggerSpecSrc = YAML.load(
-                fs.readFileSync(src)
+                fs.readFileSync(SRC)
             );
         } catch(e){
             return Promise.reject(e);
@@ -79,11 +79,11 @@ export default {
         }
 
         let yaml = toYaml.stringify(results.resolved, 8, 2);
-        await fs.writeFileSync(dest, yaml);
+        await fs.writeFileSync(DEST, yaml);
 
         console.log(`Swagger spec successfully built:`);
-        console.log(`    src: ${src}`);
-        console.log(`    dest: ${dest}`);
+        console.log(`    src: ${SRC}`);
+        console.log(`    dest: ${DEST}`);
     },
 
     /**
@@ -97,7 +97,7 @@ export default {
 
         try{
             swaggerConfig = YAML.load(
-                fs.readFileSync(dest).toString()
+                fs.readFileSync(DEST).toString()
             );
         } catch(e){
             return Promise.reject(e);
@@ -116,6 +116,6 @@ export default {
         console.log(`    protocol: ${swaggerConfig.schemes}`);
 
         const yaml = toYaml.stringify(swaggerConfig, 8, 2);
-        await fs.writeFile(dest, yaml);
+        await fs.writeFile(DEST, yaml);
     }
 }

@@ -17,6 +17,3 @@ definitions:
   $ref: ./api/definitions/index.yaml
 responses:
   $ref: ./api/responses/index.yaml
-schemes:
-  - https
-host: swagger-tax-calc-api.herokuapp.com
