@@ -8,9 +8,7 @@ const HOST = 'http://localhost:';
 const PORT = 3000;
 
 test.before(async() => {
-    await swagger.build();
-    await swagger.bake();
-    await swagger.register(app);
+    await swagger.init(app);
     await app.listen(PORT);
 });
 

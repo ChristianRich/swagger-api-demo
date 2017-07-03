@@ -16,30 +16,10 @@ const DEST = path.resolve(process.cwd() + '/api/swagger/swagger.yaml');
  */
 export default {
 
-    /**
-     * Registers the Swagger middleware with the Express app instance
-     * @param app
-     * @returns {Promise.<*>}
-     */
-    register: async(app) => {
-
-        const options = {
-            appRoot: process.cwd()
-        };
-
-        let swaggerExpress;
-
-        try{
-            swaggerExpress = await promisify(SwaggerExpress.create)(options);
-        } catch(e){
-            return Promise.reject(JSON.stringify(e, null, 2)); // Catches Swagger YAML validation errors
-        }
-
-        swaggerExpress.register(app);
-        console.log('Registered Swagger middleware');
-
-        app.use(SwaggerUi(swaggerExpress.runner.swagger));
-        console.log('Registered Swagger UI at /doc');
+    init: async function(app) {
+        await this.build();
+        await this.setEnv();
+        await this.register(app);
     },
 
     /**
@@ -111,11 +91,37 @@ export default {
             swaggerConfig.host = 'localhost:' + (process.env.PORT || 3000);
         }
 
-        console.log(`\nBaking Swagger config:`);
+        console.log(`\nSwagger back env:`);
         console.log(`    host: ${swaggerConfig.host}`);
         console.log(`    protocol: ${swaggerConfig.schemes}`);
 
         const yaml = toYaml.stringify(swaggerConfig, 8, 2);
         await fs.writeFile(DEST, yaml);
+    },
+
+    /**
+     * Registers the Swagger middleware with the Express app instance
+     * @param app
+     * @returns {Promise.<*>}
+     */
+    register: async(app) => {
+
+        const options = {
+            appRoot: process.cwd()
+        };
+
+        let swaggerExpress;
+
+        try{
+            swaggerExpress = await promisify(SwaggerExpress.create)(options);
+        } catch(e){
+            return Promise.reject(JSON.stringify(e, null, 2)); // Catches Swagger YAML validation errors
+        }
+
+        swaggerExpress.register(app);
+        console.log('Registered Swagger middleware');
+
+        app.use(SwaggerUi(swaggerExpress.runner.swagger));
+        console.log('Registered Swagger UI at /doc');
     }
 }
