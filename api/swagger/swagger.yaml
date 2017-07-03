@@ -128,5 +128,5 @@ responses:
         message:
           type: string
 schemes:
-  - https
-host: swagger-tax-calc-api.herokuapp.com
+  - http
+host: 'localhost:3000'

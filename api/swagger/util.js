@@ -108,11 +108,12 @@ export default {
             swaggerConfig.host = url.parse(process.env.HOST).host; // strip protocol from hostname, Swagger doens't like it
         } else{
             swaggerConfig.schemes = ['http'];
+            swaggerConfig.host = 'localhost:' + (process.env.PORT || 3000);
         }
 
         console.log(`\nBaking Swagger config:`);
-        console.log(`    UI protocol: ${swaggerConfig.schemes}`);
-        console.log(`    UI host: ${swaggerConfig.host}`);
+        console.log(`    host: ${swaggerConfig.host}`);
+        console.log(`    protocol: ${swaggerConfig.schemes}`);
 
         const yaml = toYaml.stringify(swaggerConfig, 8, 2);
         await fs.writeFile(src, yaml);
