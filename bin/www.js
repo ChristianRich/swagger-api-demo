@@ -1,5 +1,6 @@
 import app from '+/api';
 import { default as swagger } from '../api/swagger/util';
+require('newrelic');
 
 console.log('/bin/www');
 
