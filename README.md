@@ -30,3 +30,9 @@ App is now available at [http://localhost:8000](http://localhost:8000)
 
 ### Test
 `npm test`
+
+### Swagger UI
+When project is up and running you should see the Swagger UI live docs:
+
+ 
+![Swagger UI](https://raw.githubusercontent.com/ChristianRich/swagger-api-demo/master/images/swagger.png)
