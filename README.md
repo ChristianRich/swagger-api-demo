@@ -20,7 +20,7 @@ Calculation includes Medicare levy.
 Source: [https://www.ato.gov.au/rates/individual-income-tax-rates/](https://www.ato.gov.au/rates/individual-income-tax-rates/)
 
 ### Install
- `npm install` or using yarn `yarn install`
+ `npm install`
  
 ### Run  
 `npm start`
