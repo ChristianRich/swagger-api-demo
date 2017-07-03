@@ -1,4 +1,8 @@
 # Swagger API demo
+
+### Live demo
+[https://swagger-tax-calc-api.herokuapp.com](https://swagger-tax-calc-api.herokuapp.com)
+
 Sample project featuring best practice of API building and testing using [swagger.io](https://swagger/io)  
 
 For the purpose of demonstation this API calculates your personal income tax using 2016-17 ATO rates as per below table.  
@@ -30,6 +34,9 @@ App is now available at [http://localhost:8000](http://localhost:8000)
 
 ### Test
 `npm test`
+
+### Generate HTML code coverage report in /coverage directory
+`npm run coverage`  
 
 ### Swagger UI
 When project is up and running you should see the Swagger UI live docs:
