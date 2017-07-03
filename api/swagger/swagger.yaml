@@ -1,0 +1,131 @@
+swagger: '2.0'
+info:
+  title: 'Swagger Demo API'
+  version: 1.0.0
+  description: 'Swagger Demo API'
+  contact:
+    name: 'Christian Rich'
+    email: christian.schlosrich@gmail.com
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /healthcheck:
+    x-swagger-router-controller: healthcheck
+    get:
+      summary: Healthcheck
+      description: 'Returns uptime'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              update: {type: number}
+  /calculateTax:
+    x-swagger-router-controller: calculateTax
+    get:
+      description: 'Calculate tax after income'
+      summary: 'Calculate tax after income'
+      parameters:
+        -
+          name: income
+          in: query
+          description: 'Annual income before tax'
+          required: true
+          type: number
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TaxCalculation'
+        '400':
+          $ref: '#/responses/400'
+        '401':
+          $ref: '#/responses/401'
+        '404':
+          $ref: '#/responses/404'
+        '500':
+          $ref: '#/responses/500'
+definitions:
+  TaxCalculation:
+    type: object
+    properties:
+      baseSalary:
+        type: number
+        example: 200000
+      superannuation:
+        type: number
+        example: 19000
+      taxes:
+        type: object
+        properties:
+          taxes:
+            type: number
+            example: 63182
+          medicare:
+            type: number
+            example: 4000
+          total:
+            type: number
+            example: 67182
+      postTaxIncome:
+        type: number
+        example: 132818
+responses:
+  '400':
+    description: 'Bad Request'
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 400
+        error:
+          type: string
+          example: 'Bad Request'
+        message:
+          type: string
+  '401':
+    description: Unauthorized
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 401
+        error:
+          type: string
+          example: Unauthorized
+        message:
+          type: string
+  '404':
+    description: 'Not Found'
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 404
+        error:
+          type: string
+          example: 'Not Found'
+        message:
+          type: string
+  '500':
+    description: 'Internal Server Error'
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 500
+        error:
+          type: string
+          example: 'Internal Server Error'
+        message:
+          type: string
+schemes:
+  - http

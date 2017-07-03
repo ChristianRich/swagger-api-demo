@@ -1,0 +1,21 @@
+swagger: '2.0'
+info:
+  title: 'Swagger Demo API'
+  version: 1.0.0
+  description: 'Swagger Demo API'
+  contact:
+    name: 'Christian Rich'
+    email: christian.schlosrich@gmail.com
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  $ref: ./api/paths/index.yaml
+definitions:
+  $ref: ./api/definitions/index.yaml
+responses:
+  $ref: ./api/responses/index.yaml
+schemes:
+  - http

@@ -1,0 +1,23 @@
+type: object
+properties:
+  baseSalary:
+    type: number
+    example: 200000
+  superannuation:
+    type: number
+    example: 19000
+  taxes:
+    type: object
+    properties:
+      taxes:
+        type: number
+        example: 63182
+      medicare:
+        type: number
+        example: 4000
+      total:
+        type: number
+        example: 67182
+  postTaxIncome:
+     type: number
+     example: 132818

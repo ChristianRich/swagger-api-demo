@@ -1,0 +1,32 @@
+[
+  {
+    "from": 0,
+    "to": 18200,
+    "cumulative": 0,
+    "rate": 0
+  },
+  {
+    "from": 18201,
+    "to": 37000,
+    "cumulative": 0,
+    "rate": 19
+  },
+  {
+    "from": 37001,
+    "to": 87000,
+    "cumulative": 3572,
+    "rate": 32.5
+  },
+  {
+    "from": 87001,
+    "to": 180000,
+    "cumulative": 19822,
+    "rate": 37
+  },
+  {
+    "from": 180001,
+    "to": null,
+    "cumulative": 54232,
+    "rate": 45
+  }
+]

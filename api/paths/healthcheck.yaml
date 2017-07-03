@@ -1,0 +1,12 @@
+x-swagger-router-controller: healthcheck
+get:
+  summary: Healthcheck
+  description: Returns uptime
+  responses:
+    200:
+      description: OK
+      schema:
+        type: object
+        properties:
+          update:
+            type: number

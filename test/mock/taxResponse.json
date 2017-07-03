@@ -1,0 +1,10 @@
+{
+  "baseSalary": 200000,
+  "superannuation": 19000,
+  "taxes": {
+    "income": 63232,
+    "medicare": 4000,
+    "total": 67232
+  },
+  "postTaxIncome": 132768
+}

@@ -1,0 +1,12 @@
+description: Not Found
+schema:
+  type: object
+  properties:
+    statusCode:
+      type: number
+      example: 404
+    error:
+      type: string
+      example: Not Found
+    message:
+      type: string

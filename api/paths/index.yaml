@@ -1,0 +1,4 @@
+/healthcheck:
+  $ref: ./healthcheck.yaml
+/calculateTax:
+  $ref: ./calculateTax.yaml

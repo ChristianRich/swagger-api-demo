@@ -1,2 +1,20 @@
-# swagger-api-demo
-Sample project featuring best practice of API building and testing
+# Swagger API demo
+Sample project featuring best practice of API building and testing using [swagger.io](https://swagger/io)  
+
+For the purpose of demonstation this API calculates your personal income tax using 2016-17 ATO rates as per below table.  
+
+| Taxable income     | Tax on this income                         |
+|--------------------|--------------------------------------------|
+| 0 – $18,200        | Nil                                        |
+| $18,201 – $37,000  | 19c for each $1 over $18,200               |
+| $37,001 – $87,000  | $3,572 plus 32.5c for each $1 over $37,000 |
+| $87,001 – $180,000 | $19,822 plus 37c for each $1 over $87,000  |
+| $180,001 and over  | $54,232 plus 45c for each $1 over $180,000 |
+
+
+### Install
+`yarn install` or `npm install`
+`npm start`
+
+### Test
+`npm test`
