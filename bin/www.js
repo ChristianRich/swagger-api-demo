@@ -1,10 +1,6 @@
 import app from '+/api';
 import { default as swagger } from '../api/swagger/util';
 
-if(process.env.NEW_RELIC_LICENSE_KEY){
-    require('newrelic');
-}
-
 console.log('/bin/www');
 
 (async() => {
