@@ -1,7 +1,7 @@
 {
-  "name": "qantas-flight-apies6",
+  "name": "swagger-demo-api",
   "version": "1.0.0",
-  "description": "Qantas code challenge",
+  "description": "Swagger demo API",
   "main": "babel-node index.js",
   "scripts": {
     "start": "./node_modules/babel-cli/bin/babel-node.js index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ChristianRich/qantas-flight-api.git"
+    "url": "git@github.com:ChristianRich/swagger-api-demo.git"
   },
   "author": "Christian Rich",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ChristianRich/qantas-flight-api/issues"
+    "url": "https://github.com/ChristianRich/swagger-api-demo/issues"
   },
-  "homepage": "https://github.com/ChristianRich/qantas-flight-api#readme",
+  "homepage": "https://github.com/ChristianRich/swagger-api-demo#readme",
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-eslint": "^7.2.3",
