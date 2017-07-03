@@ -128,4 +128,5 @@ responses:
         message:
           type: string
 schemes:
-  - http
+  - https
+host: swagger-tax-calc-api.herokuapp.com

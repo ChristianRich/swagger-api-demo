@@ -18,4 +18,5 @@ definitions:
 responses:
   $ref: ./api/responses/index.yaml
 schemes:
-  - http
+  - https
+host: swagger-tax-calc-api.herokuapp.com
