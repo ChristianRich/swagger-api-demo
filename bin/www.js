@@ -7,7 +7,7 @@ console.log('/bin/www');
 
     try{
         await swagger.build();
-        await swagger.bake();
+        await swagger.setEnv();
         await swagger.register(app);
     } catch(e){
         console.log('Errors during app startup proc');

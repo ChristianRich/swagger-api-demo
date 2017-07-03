@@ -91,13 +91,13 @@ export default {
      * This is useful when running http on localhost and https on production
      * @returns {Promise.<*>}
      */
-    bake: async() => {
+    setEnv: async() => {
 
         let swaggerConfig;
 
         try{
             swaggerConfig = YAML.load(
-                fs.readFileSync(src).toString()
+                fs.readFileSync(dest).toString()
             );
         } catch(e){
             return Promise.reject(e);
@@ -116,6 +116,6 @@ export default {
         console.log(`    protocol: ${swaggerConfig.schemes}`);
 
         const yaml = toYaml.stringify(swaggerConfig, 8, 2);
-        await fs.writeFile(src, yaml);
+        await fs.writeFile(dest, yaml);
     }
 }
