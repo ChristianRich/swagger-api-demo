@@ -2,12 +2,19 @@ x-swagger-router-controller: calculateTax
 get:
   description: Calculate tax after income
   summary: Calculate tax after income
+  security:
+  - api_key: []
   parameters:
   - name: income
     in: query
     description: Annual income before tax
     required: true
     type: number
+  - name: api_key
+    in: header
+    description: API key
+    required: true
+    type: string
   responses:
     200:
       description: OK

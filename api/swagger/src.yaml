@@ -11,6 +11,11 @@ consumes:
   - application/json
 produces:
   - application/json
+securityDefinitions:
+  api_key:
+    type: apiKey
+    in: header
+    name: api_key
 paths:
   $ref: ./api/paths/index.yaml
 definitions:

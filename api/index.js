@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 /**
  * body-parser breaks when posting invalid JSON - this middleware catched the error
  */
-app.use(function (error, req, res, next) {
+app.use((error, req, res, next) => {
 	if(error instanceof SyntaxError && req.method === 'POST') {
 		return res.status(400).json({
 			error: 'Error parsing JSON'
