@@ -150,6 +150,7 @@ export default {
      * https://github.com/apigee-127/swagger-tools/blob/master/docs/QuickStart.md
      *
      * Help with setting up security
+     * https://swagger.io/docs/specification/authentication/basic-authentication/
      * http://miguelduarte.pt/2017/04/19/using-jwt-authentication-with-swagger-and-node-js/
      * https://github.com/swagger-api/swagger-node/issues/228
      * https://github.com/apigee-127/swagger-tools/issues/203
