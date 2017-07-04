@@ -15,6 +15,7 @@ get:
     description: API key
     required: true
     type: string
+    default: '1234'
   responses:
     200:
       description: OK
