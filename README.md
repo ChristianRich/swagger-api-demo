@@ -1,6 +1,6 @@
 # Swagger API demo
 
-### Live demo
+### Live demo (free account may take 10 seconds to load)
 [https://swagger-tax-calc-api.herokuapp.com](https://swagger-tax-calc-api.herokuapp.com)
 
 Sample project featuring best practice of API building and testing using [swagger.io](https://swagger/io)  
@@ -41,5 +41,4 @@ App is now available at [http://localhost:8000](http://localhost:8000)
 ### Swagger UI
 When project is up and running you should see the Swagger UI live docs:
 
- 
 ![Swagger UI](https://raw.githubusercontent.com/ChristianRich/swagger-api-demo/master/images/swagger.png)
